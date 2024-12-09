@@ -8,19 +8,21 @@ const Calculator = () =>{
 
     const [operation, setoperation] = useState(0);
 
-    const [result,setResult] = useState( 0);
+    const [result,setResult] = useState( null);
 
     const handleInput = (x) => {
         // Record what has been pressed, if integer add to operand, 
         // if operation change operand
         console.log("Recieved the number",x);
+        setOperand(x);
+        console.log("the stored operand is",operand);
 
 
     };
 
     const clear = () => {
         // Delete all stored variables
-        console.log("banan")
+        console.log(operand)
 
 
     };
