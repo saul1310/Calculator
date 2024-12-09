@@ -4,7 +4,9 @@ import React, {useState} from 'react';
 const Calculator = () =>{
     const [input, setInput] = useState( 0 );
 
-    const [operand, setOperand] = useState(0)
+    const [operand1, setOperand1] = useState(0)
+
+    const [operand2, setOperand2] = useState(0)
 
     const [operation, setoperation] = useState(0);
 
@@ -13,16 +15,18 @@ const Calculator = () =>{
     const handleInput = (x) => {
         // Record what has been pressed, if integer add to operand, 
         // if operation change operand
+
+        //if operand 1 has data, use operand 2
         console.log("Recieved the number",x);
-        setOperand(x);
-        console.log("the stored operand is",operand);
+        setOperand1(x);
+        console.log("the stored operand is",operand1);
 
 
     };
 
     const clear = () => {
         // Delete all stored variables
-        console.log(operand)
+        console.log(operand1)
 
 
     };
