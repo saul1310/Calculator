@@ -8,18 +8,31 @@ const Calculator = () =>{
 
     const [operand2, setOperand2] = useState(0)
 
-    const [operation, setoperation] = useState(0);
+    const [operation, setoperation] = useState("");
 
-    const [result,setResult] = useState( null);
+    const [result,setResult] = useState( 0);
+
 
     const handleInput = (x) => {
         // Record what has been pressed, if integer add to operand, 
         // if operation change operand
 
         //if operand 1 has data, use operand 2
-        console.log("Recieved the number",x);
-        setOperand1(x);
-        console.log("the stored operand is",operand1);
+
+        if (operand1 === null) {
+            console.log("operand 1 is empty")
+            console.log("setting input to operand 1")
+            setOperand1(x)
+        }
+        else{
+            setOperand2(x)
+
+
+        };
+
+        // console.log("Recieved the number",x);
+        // setOperand1(x);
+        // console.log("the stored operand is",operand1);
 
 
     };
@@ -29,6 +42,37 @@ const Calculator = () =>{
         console.log(operand1)
 
 
+    };
+
+    const add = () => {
+        setoperation("add")
+
+
+    };
+
+    const compute = () => {
+        let calculatedResult;
+
+        switch(operation) {
+
+            case "add":
+                console.log( operand1 + operand2)
+                break;
+
+            default:
+                console.log("Invalid operation");
+                calculatedResult = null;
+
+
+
+
+        }
+
+        setResult(calculatedResult)
+
+
+
+        
     };
 
     return(
@@ -46,7 +90,7 @@ const Calculator = () =>{
                     <View style = {styles.circle}> <Text>/ </Text></View>
                 </View>
                 <View style = {styles.buttonrow}>
-                    <TouchableOpacity onPress={()=> handleInput(5)}>
+                    <TouchableOpacity onPress={()=> handleInput(7)}>
                     <View style = {styles.circle}> <Text> 7</Text></View>
                     </TouchableOpacity>
                     <View style = {styles.circle}> <Text> 8</Text></View>
@@ -63,13 +107,17 @@ const Calculator = () =>{
                     <View style = {styles.circle}> <Text> 1</Text></View>
                     <View style = {styles.circle}> <Text> 2</Text></View>
                     <View style = {styles.circle}> <Text> 3</Text></View>
+                    <TouchableOpacity onPress={add}>
                     <View style = {styles.circle}> <Text> +</Text></View>
+                    </TouchableOpacity>
                 </View>
                 <View style = {styles.buttonrow}>
                     <View style = {styles.circle}> <Text> P</Text></View>
                     <View style = {styles.circle}> <Text> 0</Text></View>
                     <View style = {styles.circle}> <Text> .</Text></View>
+                    <TouchableOpacity onPress= {compute}>
                     <View style = {styles.circle}> <Text> =</Text></View>
+                    </TouchableOpacity>
                 </View>
             </View>
 
