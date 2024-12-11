@@ -56,6 +56,27 @@ const Calculator = () =>{
 
     };
 
+    const subtract = () => {
+        setoperation("subtract")
+        console.log("operation set to subtract")
+
+
+    };
+
+
+    const multiply = () =>{
+        setoperation("multiply")
+        console.log(" operation set to to multiplication")
+
+
+    };
+
+    const divide = () => {
+        setoperation("divide")
+        console.log(" operation set to divide")
+
+    };
+
     const compute = () => {
         let calculatedResult = 0;
 
@@ -67,6 +88,24 @@ const Calculator = () =>{
                 setOperand1(calculatedResult)
                 console.log(calculatedResult)
                 break;
+
+            case "subtract" :
+                calculatedResult = operand1 - operand2
+                setOperand1(calculatedResult)
+                console.log(calculatedResult)
+
+            case "multiply":
+                calculatedResult = operand1 * operand2
+                setOperand1(calculatedResult)
+                console.log(calculatedResult)
+                break;
+
+            case "divide" :
+                calculatedResult = operand1 / operand2
+                setOperand1( calculatedResult)
+                console.log(calculatedResult) 
+
+            
 
             default:
                 console.log("Invalid operation");
@@ -102,27 +141,48 @@ const Calculator = () =>{
                     <TouchableOpacity onPress={()=> handleInput(7)}>
                     <View style = {styles.circle}> <Text> 7</Text></View>
                     </TouchableOpacity>
+                    <TouchableOpacity onPress={()=>handleInput(8)}>
                     <View style = {styles.circle}> <Text> 8</Text></View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={()=>handleInput(9)}>
                     <View style = {styles.circle}> <Text> 9</Text></View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={multiply}>
                     <View style = {styles.circle}> <Text> X</Text></View>
+                    </TouchableOpacity>
                 </View>
                 <View style = {styles.buttonrow}>
+                    <TouchableOpacity onPress = {() => handleInput(4)}>
                     <View style = {styles.circle}> <Text> 4</Text></View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress = {() => handleInput(5)}>
                     <View style = {styles.circle}> <Text> 5</Text></View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress = {() => handleInput(5)}>
                     <View style = {styles.circle}> <Text> 6</Text></View>
+                    </TouchableOpacity>
+                
                     <View style = {styles.circle}> <Text> -</Text></View>
                 </View>
                 <View style = {styles.buttonrow}>
+                <TouchableOpacity onPress = {() => handleInput(1)}>
                     <View style = {styles.circle}> <Text> 1</Text></View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress = {() => handleInput(2)}>
                     <View style = {styles.circle}> <Text> 2</Text></View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress = {() => handleInput(3)}>
                     <View style = {styles.circle}> <Text> 3</Text></View>
+                    </TouchableOpacity>
                     <TouchableOpacity onPress={add}>
                     <View style = {styles.circle}> <Text> +</Text></View>
                     </TouchableOpacity>
                 </View>
                 <View style = {styles.buttonrow}>
                     <View style = {styles.circle}> <Text> P</Text></View>
+                    <TouchableOpacity onPress = {() => handleInput(0)}>
                     <View style = {styles.circle}> <Text> 0</Text></View>
+                    </TouchableOpacity>
                     <View style = {styles.circle}> <Text> .</Text></View>
                     <TouchableOpacity onPress= {compute}>
                     <View style = {styles.circle}> <Text> =</Text></View>
