@@ -132,10 +132,14 @@ const Calculator = () =>{
                 <Text>AC</Text>
                 </TouchableOpacity> 
 
-
+               
                     <View style = {styles.circle}> <Text> + / -</Text></View>
+                  
                     <View style = {styles.circle}> <Text> %</Text></View>
+                    <TouchableOpacity onPress ={divide}>
                     <View style = {styles.circle}> <Text>/ </Text></View>
+                    </TouchableOpacity>
+                  
                 </View>
                 <View style = {styles.buttonrow}>
                     <TouchableOpacity onPress={()=> handleInput(7)}>
