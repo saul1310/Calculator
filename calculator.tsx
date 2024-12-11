@@ -19,13 +19,14 @@ const Calculator = () =>{
 
         //if operand 1 has data, use operand 2
 
-        if (operand1 === null) {
-            console.log("operand 1 is empty")
-            console.log("setting input to operand 1")
+        if (operand1 === 0) {
+       
             setOperand1(x)
+            console.log("setting operand 1 to",x)
         }
         else{
             setOperand2(x)
+            console.log(" operand2 set to",x)
 
 
         };
@@ -39,29 +40,37 @@ const Calculator = () =>{
 
     const clear = () => {
         // Delete all stored variables
-        console.log(operand1)
+        setOperand1(0)
+        setOperand2(0)
+        setoperation("")
+        console.log(" All values cleared")
+
 
 
     };
 
     const add = () => {
         setoperation("add")
+        console.log(" Operation changed to +")
 
 
     };
 
     const compute = () => {
-        let calculatedResult;
+        let calculatedResult = 0;
 
         switch(operation) {
 
             case "add":
-                console.log( operand1 + operand2)
+               
+                calculatedResult = operand1 + operand2;
+                setOperand1(calculatedResult)
+                console.log(calculatedResult)
                 break;
 
             default:
                 console.log("Invalid operation");
-                calculatedResult = null;
+                calculatedResult = 0;
 
 
 
