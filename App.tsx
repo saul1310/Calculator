@@ -13,7 +13,8 @@ export default function App() {
         <Stack.Screen
           name="Calculator"
           component={Calculator}
-          options={{ title: 'Calculator' }} // Optional: Customize header
+          options={{ headerShown: false }}
+         
         />
       </Stack.Navigator>
       <StatusBar style="auto" />

@@ -1,7 +1,15 @@
 
-import {Text,View,StyleSheet,Button,TouchableOpacity} from 'react-native';
+import {Text,View,StyleSheet,Button,TouchableOpacity,Dimensions,Image,ImageBackground} from 'react-native';
 import React, {useState} from 'react';
+
+const { width, height } = Dimensions.get('window');
+
+
+
 const Calculator = () =>{
+    <Image source={require('./assets/home.png')}/>
+
+    
     const [input, setInput] = useState( 0 );
 
     const [operand1, setOperand1] = useState(0)
@@ -125,7 +133,20 @@ const Calculator = () =>{
 
     return(
         <View style = {styles.container}>
+          
+
+            
+           
+    
             <View style = {styles.calcscreen}>
+            <ImageBackground 
+      source={require('./assets/home.png')} // Replace with the path to your local image
+      style={styles.backgroundImage}
+    >
+      <View style={styles.overlay}>
+        <Text style={styles.text}>Welcome to the App!</Text>
+      </View>
+    </ImageBackground>
                 <Text> Calc</Text>
                 <View style = {styles.buttonrow}>
                 <TouchableOpacity onPress={clear} style={styles.circle}>
@@ -208,6 +229,11 @@ const Calculator = () =>{
 
 };
 const styles = StyleSheet.create({
+    background: {
+        flex: 1, // Make it fill the entire screen
+        justifyContent: 'center', // Center content vertically
+        alignItems: 'center', // Center content horizontally
+      },
     container: {
       flex: 1, // Ensures the container fills the entire screen
       alignItems: 'center',
@@ -215,8 +241,8 @@ const styles = StyleSheet.create({
       backgroundColor: '#fff', // Optional: Set a background color for the container
     },
     calcscreen: {
-      height: 700,
-      width: 300,
+      height: height,
+      width: width,
       backgroundColor: 'green', // Ensures the green box is visible
     },
 
@@ -238,7 +264,22 @@ const styles = StyleSheet.create({
         justifyContent : 'center',
         alignItems :'center',
 
-    }
+    },
+
+    backgroundImage: {
+        flex: 1, // Ensures the image covers the entire screen
+        justifyContent: 'center', // Centers the content
+        alignItems: 'center',
+        },
+        overlay: {
+        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Adds a slight dark overlay on top of the image
+        padding: 20,
+        borderRadius: 10,
+        },
+        text: {
+        color: 'white',
+        fontSize: 24,
+        },
   });
 
 export default Calculator;
