@@ -143,9 +143,7 @@ const Calculator = () =>{
       source={require('./assets/home.png')} // Replace with the path to your local image
       style={styles.backgroundImage}
     >
-      <View style={styles.overlay}>
-        <Text style={styles.text}>Welcome to the App!</Text>
-      </View>
+    
     </ImageBackground>
                 <Text> Calc</Text>
                 <View style = {styles.buttonrow}>
@@ -265,6 +263,8 @@ const styles = StyleSheet.create({
         alignItems :'center',
 
     },
+
+
 
     backgroundImage: {
         flex: 1, // Ensures the image covers the entire screen
