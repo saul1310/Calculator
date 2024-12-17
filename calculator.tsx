@@ -59,16 +59,19 @@ import {
   
     return (
       <ImageBackground
-        source={require('./assets/home.png')}
+        source={require('./assets/castle.jpeg')}
         style={styles.backgroundImage}
       >
         <View style={styles.container}>
           <Text style={styles.title}>Calc</Text>
           <View style={styles.calcscreen}>
             <View style={styles.buttonrow}>
+              <ImageBackground source={require('./assets/chrome.jpeg')}>
               <TouchableOpacity onPress={clear} style={styles.circle}>
                 <Text>AC</Text>
+
               </TouchableOpacity>
+              </ImageBackground>
               <View style={styles.circle}>
                 <Text>+ / -</Text>
               </View>
