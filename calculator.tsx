@@ -56,6 +56,15 @@ const Calculator = () => {
   
   };
 
+  const decimal = () => {
+    while (operation === ''  || operand1){
+      let decimal = false;
+
+
+    }
+
+  };
+
   const compute = () => {
     let calculatedResult = 0;
     switch (operation) {
@@ -85,9 +94,12 @@ const Calculator = () => {
       style={styles.backgroundImage}
     >
       <View style={styles.container}>
-     33
-        <Text style={styles.title}>Calc</Text>
+    
+     
+    
         <View style={styles.calcscreen}>
+          
+        <Image source={require('./assets/sword.png')}  style={{width: 370, height: 200}}/>
           <View style={styles.buttonrow}>
             <TouchableOpacity onPress={clear} style={styles.circle}>
               <Text style={styles.buttonText}>AC</Text>
