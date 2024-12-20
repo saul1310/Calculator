@@ -47,6 +47,60 @@ const Calculator = () => {
     }
   };
 
+  const handleposneg =() => {
+    //if operand 1 
+      // if operand 1 > 0
+    if (!operand2){
+      if (Number(operand1) > 0){
+      let num = Number(operand1)
+      num -= 2*num
+      
+      setOperand1(String(num));
+      }
+      //if operand1 < 0
+      else {
+        let num = Number(operand1)
+        num += 2*num
+        setOperand1(String(num));
+
+     
+
+      
+
+      };
+    }
+    // if operand2
+    else if (operand2) {
+      // if operand2 > 0
+      if ( Number() > 0){
+        let num = Number(operand2);
+        num -= num *2
+        setOperand2(String(num));
+
+
+
+      }
+      else {
+        //if opernad 2 < 0
+        let num = Number(operand2);
+        num += num *2
+        setOperand2(String(num))
+
+
+      };
+
+
+      
+
+
+    }
+
+    
+
+
+
+  };
+
   const compute = () => {
     let calculatedResult = 0;
     const num1 = parseFloat(operand1);
@@ -103,9 +157,11 @@ const Calculator = () => {
             <TouchableOpacity onPress={clear} style={styles.circle}>
               <Text style={styles.buttonText}>AC</Text>
             </TouchableOpacity>
+            <TouchableOpacity onPress={handleposneg} style = {styles.circle}>
             <View style={styles.circle}>
               <Text style={styles.buttonText}>+ / -</Text>
             </View>
+            </TouchableOpacity>
             <View style={styles.circle}>
               <Text style={styles.buttonText}>%</Text>
             </View>
