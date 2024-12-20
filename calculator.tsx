@@ -47,6 +47,12 @@ const Calculator = () => {
     }
   };
 
+  const handleModulo =()=> {
+    setOperation("mod")
+    console.log(" operation set to modulo")
+
+  };
+
   const handleposneg =() => {
     //if operand 1 
       // if operand 1 > 0
@@ -121,6 +127,11 @@ const Calculator = () => {
       case 'multiply':
         calculatedResult = num1 * num2;
         break;
+
+      case 'mod':
+        calculatedResult = num1 % num2;
+        break;
+
       case 'divide':
         if (num2 === 0) {
           alert('Cannot divide by zero');
@@ -162,9 +173,11 @@ const Calculator = () => {
               <Text style={styles.buttonText}>+ / -</Text>
             </View>
             </TouchableOpacity>
+            <TouchableOpacity onPress= {handleModulo} style = {styles.circle}>
             <View style={styles.circle}>
               <Text style={styles.buttonText}>%</Text>
             </View>
+            </TouchableOpacity>
             <TouchableOpacity onPress={() => setOperation('divide')} style={styles.circle}>
               <Text style={styles.buttonText}>/</Text>
             </TouchableOpacity>
